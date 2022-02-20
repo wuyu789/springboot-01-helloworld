@@ -1,0 +1,13 @@
+person:
+  name: zhangsan
+  age: 18
+  email: 1308638159@qq.com
+
+spring:
+  thymeleaf:
+  prefix: classpath:/templates/
+  suffix: .html
+  mode: HTML5
+  encoding: UTF-8
+  profiles:
+    active: dev
