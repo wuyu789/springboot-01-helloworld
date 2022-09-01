@@ -79,6 +79,30 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.boot</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/c3p0/c3p0 -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.8</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
@@ -98,11 +122,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
-                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
             <plugin>
@@ -123,5 +145,17 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- 发布配置管理 -->
+    <distributionManagement>
+        <repository>
+            <id>wuyu-release</id>
+            <url>http://localhost:8081/repository/wuyu-release/</url>
+        </repository>
+        <snapshotRepository>
+            <id>wuyu-snapshots</id>
+            <url>http://localhost:8081/repository/wuyu-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>

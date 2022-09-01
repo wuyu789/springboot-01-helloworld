@@ -3,6 +3,8 @@ package com.wuyu.controller;
 import com.wuyu.entity.User;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +19,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("hello")
 public class HelloController {
 
+    private Logger logger = LoggerFactory.getLogger(HelloController.class);
+
     @GetMapping("/toIndex")
     public String index(Model model){
         model.addAttribute("msg","hello,spring!");
@@ -26,6 +30,7 @@ public class HelloController {
     @GetMapping("/hello")
     @ResponseBody
     public String hello(@ApiParam("用户名") String username){
+        logger.info("username={}",username);
         return username;
     }
 
